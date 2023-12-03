@@ -61,6 +61,10 @@ async function main() {
     console.log('Database & tables created!');
   });
 
+  app.get('/', (req, res) => {
+    res.status(200).send('Healthy!')
+  })
+
   app.post('/customers', async (req, res) => {
     try {
       const newCustomer = await Customer.create(req.body);
