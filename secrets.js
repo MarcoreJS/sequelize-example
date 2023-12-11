@@ -2,10 +2,13 @@ const AWS = require('aws-sdk');
 const { Sequelize, DataTypes } = require('sequelize');
 const express = require('express');
 const bodyParser = require('body-parser');
+var cors = require('cors')
 require('dotenv').config();
 
 const app = express();
 const port = 3000;
+
+app.use(cors())
 
 AWS.config.update({
   region: 'us-east-1'
